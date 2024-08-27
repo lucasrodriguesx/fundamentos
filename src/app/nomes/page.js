@@ -1,16 +1,22 @@
 
 'use client'
 import Pagina from "@/app/components/Pagina";
+import { useState } from "react";
+import { Button } from "react-bootstrap";
 
 export default function Nomes(){
 
-    let nome = 'Lucas'
+    const [nome, setNome] = useState('Lucas')
+
+    function alterarNome (){
+        const novoNome = nome == 'Lucas' ? 'Lucas Rodrigues Dos Santos' : 'Lucas'
+        setNome(novoNome)
+    }
 
     return (
         <Pagina titulo="Nomes">
-        <button>Primeiro Nome</button>
         <h1>{nome}</h1>
-        <button>Primeiro Nome</button>
+        <button onClick= {alterarNome}>alterar Nome</button>
         </Pagina>
     );
   }
