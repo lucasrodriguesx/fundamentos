@@ -1,24 +1,25 @@
-'use client'
-import apiDisney from "@/apiDisney";
+"use client";
+
 import Pagina from "@/app/components/Pagina";
-import axios from "axios";
+import apiDisney from "@/services/apiDisney";
 import { useEffect, useState } from "react";
 
-export default function disney(){
+export default function Page() {
+  const [personagens, setPersonagens] = useState([]);
 
-    const [personagens, setPersonagens] = useState([])
-
-    useEffect(()=> {
+    useEffect(() =>{
         apiDisney.get('character').then(resultado=>{
             setPersonagens(resultado.data.data)
+            
         })
     },[])
-    return (
-        <Pagina titulo="Disney">     
-             {personagens.map(item => (
-                 <p>{item.name}</p>
-             ))}
-        </Pagina>
-    )
 
+  return (
+    <Pagina titulo="Disney">
+                {personagens.map((item) => (
+                  <p>{item.name}</p>
+                ))}
+        
+    </Pagina>
+  );
 }
