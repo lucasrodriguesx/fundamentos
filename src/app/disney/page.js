@@ -1,7 +1,8 @@
 "use client";
 
+import apiDisney from "@/apiDisney";
 import Pagina from "@/app/components/Pagina";
-import apiDisney from "@/services/apiDisney";
+
 import { useEffect, useState } from "react";
 
 export default function Page() {

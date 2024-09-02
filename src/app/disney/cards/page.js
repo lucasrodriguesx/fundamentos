@@ -1,7 +1,7 @@
 "use client";
 
+import apiDisney from "@/apiDisney";
 import Pagina from "@/app/components/Pagina";
-import apiDisney from "@/services/apiDisney";
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
